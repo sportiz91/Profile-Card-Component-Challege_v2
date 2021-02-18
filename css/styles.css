@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.container {
+
+  position: relative;
+  display: grid; /* if I put the display in flex, web page is shown by row by default (instead by column) */
+  background-color: hsl(185, 75%, 39%);
+  height: 100vh;
+  width: 100vw;
+  padding: 3vh 2vw; /* gets some margin at the left and right */
+  overflow: hidden;
+
+  /* Note: with this, you can do a "one pager" */
+}
+
+.container .bgPattern {
+  position: absolute;
+
+  /* Note: bgPatter photos has two classes asociated bgPattner and top or bottom
+  when I name .container .bgPattern, I'm saying: "select all elements with bgPattern that are descendant
+  from container" (bgPattern is one of the two classes of the background images) */
+
+  /* Note 2: if position weren't absolute, bottom background will follow the flow of HTML, so the attribution
+  will not see. When you say position: absolute; the bottom background is no longer in the flow of HTML and
+  the position is derived from the container, which is a "one pager" */
+}
+
+.container .bgPattern.top {
+  /* Note: when I name .container .bgPattern.top I'm saying: "from container, grab all the elements that
+  have bgpattern AND top classes (both of them)" */
+  top: 0;
+  left: 0; /*Note: top & left doesn't affect much in this case */
+  transform: translate(-30%, -50%);
+
+}
+
+.container .bgPattern.bottom {
+
+  bottom: 0;
+  right: 0;
+  transform: translate(30%, 60%);
+}
+
+.card {
+  background-color: white;
+  height: 350px;
+  width: 300px;
+  border-radius: 10px;
+  margin: auto; /*NOTE: if attribution position, weren't absolute, the card will not be centered, cause it has
+  margin and padding that are disturbing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  overflow: hidden; /*NOTE: if i don't use overflow hidden, the border radius would not be circular. Because the
+  background image will be larger than the radius */
+  z-index: 1;
+  box-shadow: 1px 1px 20px 0 #0000004a; /* right, top, blur */
+}
+
+.card::before {
+  content: "";
+  background-image: url("C:/Users/sport/Google Drive/Back Up - Act 13-06/Escritorio/Solidity/Web Development Proyects/Profile card component challenge_v2/images/bg-pattern-card.svg");
+  background-position: right center;
+  height: 35%;
+  width: 100%;
+  position: absolute;
+  top: 0; /* if I not put top: 0; the background image would be centered following the align-items center from the parent */
+  z-index: 1;
+}
+
+.card__photo {
+
+  z-index: 2;
+  border-radius: 50%;
+  overflow: hidden; /* if I don't use overflow: hidden, the image will be squared */
+  border: 4px solid white;
+  margin-top: 20%;
+  width: 100px; /*with width & height I make the image smaller */
+  height: 100px;
+
+
+  /*Note: previously I used position absolute; in this class. You can't have that kind of position in here.
+  If position were absolute, the photo would break the flow of the card div and the other items (name & stats)
+  would be unaligned */
+}
+
+.card__photo__victor {
+  height: 100%; /*if I don't put height and width 100% the border eats some of the image */
+  width: 100%;
+}
+
+.card__name {
+  text-align: center;
+  color: hsl(229, 23%, 23%);
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.card__name__age {
+  color: hsl(227, 10%, 46%);
+  font-weight: 400;
+}
+
+.card__name__city {
+  color: hsl(227, 10%, 46%);
+  font-weight: 400;
+  font-size: 0.6875rem;
+  margin: auto auto 15px auto;
+}
+
+.card__stats {
+  display: flex;
+  text-align: center;
+  justify-content: space-around; /* same margin in between items, and in between start and end margin */
+  width: 100%; /*if I don't put width 100%, the width will be auto, which means that it only takes the space
+  of the text */
+  border-top: solid 1px hsl(227, 10%, 90%);
+
+}
+
+.card__stats__numbers {
+  text-align: center;
+  color: hsl(229, 23%, 23%);
+  font-weight: 700;
+  line-height: 1.75;
+  margin: 10px auto auto auto;
+}
+
+
+
+.attribution {
+  position: absolute;
+  bottom: 20px; /*with bottom: 20px; you only left a margin from bottom of 20px, so you get the text at nearly bottom */
+  left: 0;
+  right: 0;
+  text-align: center; /*Note: if you want the text centered but in more than one large line, you have to select
+  a width (% of the body in this case) and margin: auto; */
+  font-size: 0.61rem;
+}
+
+.attribution a{
+  font-size: inherit;
+}

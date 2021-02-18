@@ -151,7 +151,7 @@
 
 @media (max-width: 375px) {
   .container .bgPattern {
-    width: 28em;
+    display: none;
   }
   .card{
     height: 400px;

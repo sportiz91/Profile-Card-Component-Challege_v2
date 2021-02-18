@@ -150,7 +150,11 @@
 }
 
 @media (max-width: 375px) {
-  .container .bgPattern {
+  .container .bgPattern.top {
+    display: none;
+  }
+  
+  .container .bgPattern.bottom {
     display: none;
   }
   .card{

@@ -153,6 +153,10 @@
   .container .bgPattern {
     width: 28em;
   }
+  .card{
+    height: 400px;
+    widht: 360px;
+  }
   .wrapper .bgPattern.top {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);

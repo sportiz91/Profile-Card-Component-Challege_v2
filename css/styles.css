@@ -150,23 +150,7 @@
 }
 
 @media (max-width: 375px) {
-  .container .bgPattern.top {
-    display: none;
-  }
   
-  .container .bgPattern.bottom {
-    display: none;
+  .card {
+    max-width: 100%;
   }
-  .card{
-    height: 400px;
-    widht: 360px;
-  }
-  .wrapper .bgPattern.top {
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-  }
-  .wrapper .bgPattern.bottom {
-    -webkit-transform: translate(50%, 50%);
-            transform: translate(50%, 50%);
-  }
-}

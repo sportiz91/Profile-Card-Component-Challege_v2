@@ -148,18 +148,3 @@
 .attribution a{
   font-size: inherit;
 }
-
-@media (max-width: 375px) {
-  
-  .container .bgPattern {
-    width: 28em;
-  }
-  .container .bgPattern.top {
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-  }
-  .container .bgPattern.bottom {
-    -webkit-transform: translate(50%, 50%);
-            transform: translate(50%, 50%);
-  }
-}

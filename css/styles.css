@@ -148,3 +148,8 @@
 .attribution a{
   font-size: inherit;
 }
+
+@media (max-width: 375px) {
+  .container .bgPattern {
+    width: 28em;
+  }
